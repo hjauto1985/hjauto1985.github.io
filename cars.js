@@ -4,6 +4,13 @@
 // 賣掉了：把 sold 改成 true（會顯示「已售出」），或直接刪掉那一段
 const CARS = [
   {
+    id: 98, photos: ["img/car98_1.jpg"],
+    brand: "Toyota", model: "C-HR 1.2T 尊爵 AWD", year: 2021, km: "18 萬多", price: 49.8, type: "休旅",
+    tags: ["認證車", "原鈑件", "TSS 2.0"],
+    points: ["ACC 全速域跟車、LTA 車道循跡、PCS 預警防護", "摸門感應、一鍵啟動、360 環景", "雙區恆溫空調、皮椅", "1.2T 渦輪，一年稅金 8,640 元"],
+    loan: "銀行可貸 85 萬，還可找 3～40 萬周轉", sold: false
+  },
+  {
     id: 96, brand: "BMW", model: "X4 20i", year: 2018, km: "14 萬", price: 96.8, type: "休旅",
     tags: ["認證車", "原鈑件"],
     points: ["5AT 智慧系統", "摸門感應、盲點偵測", "電動尾門、雙前電動座椅", "藍牙通訊、原廠氛圍燈"],

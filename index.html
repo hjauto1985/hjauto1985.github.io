@@ -171,7 +171,7 @@ footer strong{color:var(--yellow)}
   </div>
 </div>
 
-<script src="cars.js?v=3"></script>
+<script src="cars.js?v=4"></script>
 <script>
 const PHOTOS = 4; // 每台車的照片數（img/car{id}_1.jpg ~ _4.jpg）
 const grid = document.getElementById('grid');
@@ -209,6 +209,8 @@ function openCar(id){
   const name = `${cur.year} ${cur.brand} ${cur.model}`;
   document.getElementById('mImg').alt = name;
   document.getElementById('thumbs').innerHTML = photos(cur).map((p,k) => `<img src="${p}" data-k="${k}" alt="">`).join('');
+  const multi = photos(cur).length > 1;
+  ['prev','next','thumbs'].forEach(i => document.getElementById(i).style.display = multi ? '' : 'none');
   const msg = encodeURIComponent(`你好，我想詢問 ${name}（${cur.price} 萬）`);
   document.getElementById('info').innerHTML = `
     <h2>${cur.brand} ${cur.model}<small>${cur.year} 年・${cur.type}・跑 ${cur.km} 公里</small></h2>
