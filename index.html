@@ -3,14 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>弘將車庫｜台中北屯中古車</title>
+<title>弘將車業｜台中北屯中古車</title>
 <meta name="description" content="弘將車業在庫車輛一覽，台中北屯預約賞車、試乘、貸款、舊車換購。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#141414; --panel:#1e1e1e; --panel2:#262626; --line:#333;
-  --gold:#e0a43a; --gold2:#f3c46b; --text:#f2f2f2; --muted:#a3a3a3;
+  --bg:#ffffff; --soft:#f3f6fa; --panel:#ffffff; --panel2:#eef2f7; --line:#e1e6ee;
+  --blue:#1f6fd1; --blue-d:#123f7a; --blue-l:#e6f0fc;
+  --yellow:#ffd43b; --yellow-l:#fff6d1;
+  --gold:#c08a1e; --gold2:#d9a432;
+  --text:#1d2633; --muted:#6b7686;
   --line-green:#06c755;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -21,81 +24,84 @@ a{color:inherit;text-decoration:none}
 .wrap{max-width:1180px;margin:0 auto;padding:0 16px}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:rgba(20,20,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;height:60px}
-.logo{font-weight:900;font-size:20px;letter-spacing:.06em}
-.logo b{color:var(--gold)}
+.logo{font-weight:900;font-size:20px;letter-spacing:.06em;color:var(--blue-d)}
+.logo b{color:var(--blue)}
 .logo small{font-size:12px;color:var(--muted);font-weight:500;margin-left:8px;letter-spacing:.02em}
 .top-cta{display:flex;gap:8px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:40px;padding:0 16px;border-radius:999px;font-weight:700;font-size:14px;border:0;cursor:pointer;white-space:nowrap}
-.btn-gold{background:var(--gold);color:#1a1a1a}
+.btn-gold{background:var(--yellow);color:var(--blue-d)}
 .btn-line{background:var(--line-green);color:#fff}
-.btn-ghost{background:transparent;color:var(--text);border:1px solid #555}
+.btn-ghost{background:#fff;color:var(--blue);border:1.5px solid var(--blue)}
 
 /* hero */
-.hero{padding:48px 0 28px}
-.kicker{display:inline-block;font-size:13px;font-weight:700;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:2px 12px;letter-spacing:.1em}
-.hero h1{font-size:clamp(28px,5vw,46px);font-weight:900;line-height:1.25;margin:14px 0 10px}
-.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-bg{background:linear-gradient(160deg,var(--blue-l) 0%,#f7fafd 55%,var(--yellow-l) 100%);border-bottom:1px solid var(--line)}
+.hero{padding:44px 0 32px}
+.kicker{display:inline-block;font-size:13px;font-weight:700;color:var(--blue-d);background:var(--yellow);border-radius:999px;padding:3px 14px;letter-spacing:.1em}
+.hero h1{font-size:clamp(28px,5vw,46px);font-weight:900;line-height:1.3;margin:14px 0 10px;color:var(--blue-d)}
+.hero h1 em{font-style:normal;color:var(--blue);background:linear-gradient(transparent 62%,var(--yellow) 62%);padding:0 2px}
 .hero p{color:var(--muted);max-width:620px}
-.promise{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:18px;font-size:14px}
+.promise{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;font-size:14px}
+.promise span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px 12px;color:var(--blue-d)}
 .promise span::before{content:"✓ ";color:var(--gold);font-weight:900}
 
 /* filters */
-.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0 20px}
-.chip{height:36px;padding:0 14px;border-radius:999px;border:1px solid #444;background:var(--panel);color:var(--text);font:inherit;font-size:14px;cursor:pointer}
-.chip.on{background:var(--gold);border-color:var(--gold);color:#1a1a1a;font-weight:700}
-.filters select{height:36px;border-radius:999px;border:1px solid #444;background:var(--panel);color:var(--text);font:inherit;font-size:14px;padding:0 12px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:24px 0 20px}
+.chip{height:36px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--soft);color:var(--text);font:inherit;font-size:14px;cursor:pointer}
+.chip.on{background:var(--blue);border-color:var(--blue);color:#fff;font-weight:700}
+.filters select{height:36px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--text);font:inherit;font-size:14px;padding:0 12px}
 .count{margin-left:auto;color:var(--muted);font-size:14px}
+.count b{color:var(--blue)}
 
 /* grid */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:18px;padding-bottom:40px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;transition:transform .15s,border-color .15s;display:flex;flex-direction:column}
-.card:hover{transform:translateY(-3px);border-color:var(--gold)}
-.ph{position:relative;aspect-ratio:4/3;background:#000;overflow:hidden}
+.grid{margin-top:28px;display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:20px;padding-bottom:40px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(18,63,122,.06)}
+.card:hover{transform:translateY(-3px);border-color:var(--blue);box-shadow:0 10px 24px rgba(18,63,122,.14)}
+.ph{position:relative;aspect-ratio:4/3;background:var(--soft);overflow:hidden}
 .ph img{width:100%;height:100%;object-fit:cover}
-.yr{position:absolute;left:10px;top:10px;background:rgba(0,0,0,.7);color:var(--gold2);font-weight:700;font-size:13px;padding:2px 10px;border-radius:999px}
-.sold .ph::after{content:"已售出";position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.6);font-size:28px;font-weight:900;letter-spacing:.2em;color:#fff}
+.yr{position:absolute;left:10px;top:10px;background:var(--yellow);color:var(--blue-d);font-weight:700;font-size:13px;padding:2px 10px;border-radius:999px;box-shadow:0 1px 4px rgba(0,0,0,.15)}
+.sold .ph::after{content:"已售出";position:absolute;inset:0;display:grid;place-items:center;background:rgba(255,255,255,.7);font-size:28px;font-weight:900;letter-spacing:.2em;color:var(--blue-d)}
 .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:8px;flex:1}
-.name{font-size:18px;font-weight:700;line-height:1.3}
+.name{font-size:18px;font-weight:700;line-height:1.3;color:var(--blue-d)}
 .name small{display:block;font-size:13px;color:var(--muted);font-weight:500}
 .meta{display:flex;gap:6px;flex-wrap:wrap}
-.tag{font-size:12px;background:var(--panel2);color:#ddd;border-radius:6px;padding:2px 8px}
-.row{display:flex;align-items:flex-end;justify-content:space-between;margin-top:auto;padding-top:6px}
+.tag{font-size:12px;background:var(--blue-l);color:var(--blue);border-radius:6px;padding:2px 8px;font-weight:500}
+.row{display:flex;align-items:flex-end;justify-content:space-between;margin-top:auto;padding-top:10px;border-top:1px dashed var(--line)}
 .price{font-size:28px;font-weight:900;color:var(--gold);line-height:1}
 .price small{font-size:14px;font-weight:700;margin-left:2px}
-.km{font-size:13px;color:var(--muted)}
+.km{font-size:13px;color:var(--blue);font-weight:500}
 
 /* modal */
-.modal{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;padding:16px}
+.modal{position:fixed;inset:0;z-index:50;background:rgba(18,30,50,.55);display:none;align-items:center;justify-content:center;padding:16px}
 .modal.open{display:flex}
-.box{background:var(--panel);border:1px solid var(--line);border-radius:16px;max-width:980px;width:100%;max-height:92vh;overflow:auto;display:grid;grid-template-columns:1.25fr 1fr}
-.gal{background:#000;position:relative}
-.gal .main{aspect-ratio:4/3;width:100%;object-fit:contain;background:#000}
-.thumbs{display:flex;gap:6px;padding:8px;background:#0c0c0c;overflow-x:auto}
+.box{background:#fff;border-radius:18px;max-width:980px;width:100%;max-height:92vh;overflow:auto;display:grid;grid-template-columns:1.25fr 1fr;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.gal{background:var(--soft);position:relative}
+.gal .main{aspect-ratio:4/3;width:100%;object-fit:contain;background:#e9edf3}
+.thumbs{display:flex;gap:6px;padding:8px;background:var(--soft);overflow-x:auto}
 .thumbs img{width:72px;height:54px;object-fit:cover;border-radius:6px;opacity:.55;cursor:pointer;flex:none;border:2px solid transparent}
-.thumbs img.on{opacity:1;border-color:var(--gold)}
-.nav{position:absolute;top:calc(50% - 40px);width:40px;height:40px;border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:22px;cursor:pointer}
+.thumbs img.on{opacity:1;border-color:var(--blue)}
+.nav{position:absolute;top:calc(50% - 40px);width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:var(--blue-d);font-size:22px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.15)}
 .nav.p{left:8px}.nav.n{right:8px}
 .info{padding:22px;display:flex;flex-direction:column;gap:12px}
-.info h2{font-size:24px;line-height:1.3}
+.info h2{font-size:24px;line-height:1.3;color:var(--blue-d)}
 .info h2 small{display:block;font-size:14px;color:var(--muted);font-weight:500}
 .info ul{list-style:none;display:flex;flex-direction:column;gap:6px;font-size:15px}
 .info li{padding-left:18px;position:relative}
-.info li::before{content:"";position:absolute;left:2px;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--gold)}
-.loan{background:#2a2216;border:1px solid #5a4520;color:var(--gold2);border-radius:10px;padding:8px 12px;font-size:14px}
+.info li::before{content:"";position:absolute;left:2px;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--blue)}
+.loan{background:var(--yellow-l);border:1px solid #f1d77a;color:#7a5a12;border-radius:10px;padding:8px 12px;font-size:14px}
 .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
 .acts .btn{flex:1;height:46px;font-size:15px}
-.x{position:absolute;right:12px;top:10px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:22px;cursor:pointer;z-index:2}
+.x{position:absolute;right:12px;top:10px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--blue-d);font-size:22px;cursor:pointer;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.15)}
 
 /* footer */
 .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:10px 0 40px}
-.svc{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px}
-.svc b{color:var(--gold);display:block;margin-bottom:4px}
+.svc{background:var(--soft);border:1px solid var(--line);border-left:4px solid var(--yellow);border-radius:12px;padding:16px}
+.svc b{color:var(--blue-d);display:block;margin-bottom:4px}
 .svc p{font-size:14px;color:var(--muted)}
-footer{border-top:1px solid var(--line);padding:28px 0 90px;color:var(--muted);font-size:14px}
+footer{background:var(--blue-d);padding:28px 0 90px;color:#c9d6ea;font-size:14px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between}
-footer strong{color:var(--text)}
+footer strong{color:var(--yellow)}
 
 /* mobile fixed bar */
 .mbar{display:none}
@@ -103,8 +109,8 @@ footer strong{color:var(--text)}
   .top-cta{display:none}
   .box{grid-template-columns:1fr;max-height:94vh}
   .modal{padding:0;align-items:flex-end}
-  .box{border-radius:16px 16px 0 0}
-  .mbar{display:flex;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(20,20,20,.95);border-top:1px solid var(--line)}
+  .box{border-radius:18px 18px 0 0}
+  .mbar{display:flex;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.96);border-top:1px solid var(--line);box-shadow:0 -4px 14px rgba(18,63,122,.08)}
   .mbar .btn{flex:1;height:46px}
   .count{width:100%;margin-left:0}
 }
@@ -114,7 +120,7 @@ footer strong{color:var(--text)}
 
 <header>
   <div class="wrap bar">
-    <div class="logo"><b>弘將</b>車庫<small>台中北屯</small></div>
+    <div class="logo"><b>弘將</b>車業<small>台中北屯</small></div>
     <div class="top-cta">
       <a class="btn btn-ghost" href="tel:0938266828">📞 0938-266-828</a>
       <a class="btn btn-line" href="https://lin.ee/h2yMjrm" target="_blank" rel="noopener">LINE 詢問</a>
@@ -122,34 +128,15 @@ footer strong{color:var(--text)}
   </div>
 </header>
 
-<main class="wrap">
+<div class="hero-bg"><div class="wrap">
   <section class="hero">
-    <span class="kicker">在庫車輛</span>
-    <h1>現在店裡有哪些車，<br><em>一頁看完。</em></h1>
-    <p>每台車都是阿准親自挑、親自整理。看到喜歡的，直接打電話或傳 LINE，約時間來北屯看車、試乘。</p>
-    <div class="promise"><span>預約賞車・試乘</span><span>貸款規劃</span><span>舊車換購</span><span>缺點先講在前面</span></div>
+    <h1><em>推薦車款</em></h1>
+    <p>看到喜歡的、想了解的，直接打電話或傳 LINE，約時間來找阿准看車、試乘。</p>
+    <div class="promise"><span>預約賞車・試乘</span><span>貸款規劃</span><span>舊車換購</span><span>缺點先講在前面</span><span>全省 SAVE 聯盟保固</span><span>協助售後車輛保養維修</span></div>
   </section>
+</div></div>
 
-  <div class="filters" id="filters">
-    <button class="chip on" data-t="全部">全部</button>
-    <button class="chip" data-t="轎車">轎車</button>
-    <button class="chip" data-t="掀背">掀背</button>
-    <button class="chip" data-t="休旅">休旅</button>
-    <select id="budget" aria-label="預算">
-      <option value="999">預算不限</option>
-      <option value="10">10 萬以內</option>
-      <option value="20">20 萬以內</option>
-      <option value="30">30 萬以內</option>
-      <option value="50">50 萬以內</option>
-    </select>
-    <select id="sort" aria-label="排序">
-      <option value="high">價格高→低</option>
-      <option value="low">價格低→高</option>
-      <option value="new">年份新→舊</option>
-    </select>
-    <span class="count" id="count"></span>
-  </div>
-
+<main class="wrap">
   <section class="grid" id="grid"></section>
 
   <section class="services">
@@ -162,7 +149,7 @@ footer strong{color:var(--text)}
 <footer>
   <div class="wrap">
     <div><strong>弘將車業</strong><br>台中北屯｜營業時間 9:00–18:00<br>賞車請先預約</div>
-    <div>聯絡：彭均准<br>電話／LINE：<a href="tel:0938266828">0938-266-828</a><br>Email：hjauto1985@gmail.com</div>
+    <div>聯絡：彭均准<br>電話：<a href="tel:0938266828">0938-266-828</a><br>LINE：<a href="https://lin.ee/h2yMjrm" target="_blank" rel="noopener">@hj1985</a></div>
   </div>
 </footer>
 
@@ -184,21 +171,21 @@ footer strong{color:var(--text)}
   </div>
 </div>
 
-<script src="cars.js"></script>
+<script src="cars.js?v=3"></script>
 <script>
 const PHOTOS = 4; // 每台車的照片數（img/car{id}_1.jpg ~ _4.jpg）
 const grid = document.getElementById('grid');
-let type = '全部';
-const photos = c => (c.photos || Array.from({length: PHOTOS}, (_, i) => `img/car${c.id}_${i+1}.jpg`));
+// 封面：cars.js 裡寫 cover: 3 就用第 3 張當封面（預設第 1 張）
+const photos = c => {
+  const ps = c.photos || Array.from({length: PHOTOS}, (_, i) => `img/car${c.id}_${i+1}.jpg`);
+  const k = (c.cover || 1) - 1;
+  return [ps[k], ...ps.filter((_, i) => i !== k)];
+};
 
 function render(){
-  const max = +document.getElementById('budget').value;
-  const sort = document.getElementById('sort').value;
-  let list = CARS.filter(c => (type === '全部' || c.type === type) && c.price <= max);
-  list.sort((a,b) => sort === 'low' ? a.price - b.price : sort === 'new' ? b.year - a.year : b.price - a.price);
-  list.sort((a,b) => a.sold - b.sold);
-  document.getElementById('count').textContent = `共 ${list.filter(c=>!c.sold).length} 台在庫`;
-  grid.innerHTML = list.length ? list.map(c => `
+  // 價格由低到高，賣掉的排最後
+  const list = [...CARS].sort((a,b) => (a.sold - b.sold) || (a.price - b.price));
+  grid.innerHTML = list.map(c => `
     <article class="card${c.sold ? ' sold' : ''}" data-id="${c.id}">
       <div class="ph"><img src="${photos(c)[0]}" alt="${c.year} ${c.brand} ${c.model}" loading="lazy"><span class="yr">${c.year} 年</span></div>
       <div class="body">
@@ -206,16 +193,8 @@ function render(){
         <div class="meta">${c.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
         <div class="row"><div class="price">${c.price}<small>萬</small></div><div class="km">看詳情 →</div></div>
       </div>
-    </article>`).join('') : '<p style="color:var(--muted)">這個條件目前沒有車，傳 LINE 告訴阿准你要找什麼，幫你留意。</p>';
+    </article>`).join('');
 }
-
-document.getElementById('filters').addEventListener('click', e => {
-  const b = e.target.closest('.chip'); if (!b) return;
-  document.querySelectorAll('.chip').forEach(x => x.classList.toggle('on', x === b));
-  type = b.dataset.t; render();
-});
-document.getElementById('budget').onchange = render;
-document.getElementById('sort').onchange = render;
 
 // modal
 const modal = document.getElementById('modal');
