@@ -7,7 +7,7 @@ const CARS = [
     id: 98, photos: ["img/car98_1.jpg","img/car98_2.jpg","img/car98_3.jpg","img/car98_4.jpg","img/car98_5.jpg"],
     brand: "Toyota", model: "C-HR 1.2T 尊爵 AWD", year: 2021, km: "18 萬多", price: 49.8, type: "休旅",
     tags: ["認證車", "原鈑件", "TSS 2.0"],
-    points: ["TSS 2.0：ACC 全速域跟車、LTA 車道循跡、PCS 預警防護", "iKey 一鍵啟動、摸門感應", "車側盲點偵測、360 環景", "雙區恆溫空調、皮椅", "1.2T 渦輪＋四輪驅動，一年稅金 8,640 元"],
+    points: ["TSS 2.0：ACC 全速域跟車、LTA 車道循跡、PCS 預警防護", "iKey 一鍵啟動、摸門感應", "盲點偵測、360 環景", "恆溫空調、後座出風口、加熱椅", "1.2T 渦輪＋四輪驅動，一年稅金 8,640 元"],
     loan: "銀行可貸 85 萬，還可找 3～40 萬周轉", sold: false
   },
   {
