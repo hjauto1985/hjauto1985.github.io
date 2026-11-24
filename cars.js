@@ -1,8 +1,16 @@
 // ===== 在庫車輛資料 =====
 // 新增一台車：複製一段 { ... }，改內容，照片放 img/ 資料夾
 // 封面：預設第 1 張（車頭向左 45 度），要換就加 cover: 3（用第 3 張）
+// 價格還沒定：price: null（會顯示「整備中」）
 // 賣掉了：把 sold 改成 true（會顯示「已售出」），或直接刪掉那一段
 const CARS = [
+  {
+    id: 99, photos: ["img/car99_p01.jpg","img/car99_p02.jpg","img/car99_p03.jpg","img/car99_p04.jpg","img/car99_p05.jpg","img/car99_p06.jpg","img/car99_p07.jpg","img/car99_p08.jpg","img/car99_p09.jpg"],
+    brand: "Hyundai", model: "i30 1.6", year: 2011, km: "16 萬多", price: null, type: "掀背",
+    tags: ["新入庫", "變速箱已更換"],
+    points: ["變速箱已更換", "影音主機支援 Apple CarPlay", "倒車顯影"],
+    loan: "", sold: false
+  },
   {
     id: 98, photos: ["img/car98_p01.jpg","img/car98_p02.jpg","img/car98_p03.jpg","img/car98_p04.jpg","img/car98_p05.jpg","img/car98_p06.jpg","img/car98_p07.jpg","img/car98_p08.jpg","img/car98_p09.jpg","img/car98_p10.jpg","img/car98_p11.jpg","img/car98_p12.jpg","img/car98_p13.jpg","img/car98_p14.jpg","img/car98_p15.jpg","img/car98_p16.jpg","img/car98_p17.jpg","img/car98_p18.jpg"],
     brand: "Toyota", model: "C-HR 1.2T 尊爵 AWD", year: 2021, km: "18 萬多", price: 49.8, type: "休旅",

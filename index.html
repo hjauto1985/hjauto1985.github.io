@@ -70,6 +70,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdro
 .row{display:flex;align-items:flex-end;justify-content:space-between;margin-top:auto;padding-top:10px;border-top:1px dashed var(--line)}
 .price{font-size:28px;font-weight:900;color:var(--gold);line-height:1}
 .price small{font-size:14px;font-weight:700;margin-left:2px}
+.price.prep{font-size:20px}
 .km{font-size:13px;color:var(--blue);font-weight:500}
 
 /* modal */
@@ -171,7 +172,7 @@ footer strong{color:var(--yellow)}
   </div>
 </div>
 
-<script src="cars.js?v=7"></script>
+<script src="cars.js?v=8"></script>
 <script>
 const PHOTOS = 4; // 每台車的照片數（img/car{id}_1.jpg ~ _4.jpg）
 const grid = document.getElementById('grid');
@@ -182,16 +183,19 @@ const photos = c => {
   return [ps[k], ...ps.filter((_, i) => i !== k)];
 };
 
+// 價格空白＝整備中
+function priceHtml(c){ return c.price == null ? '<div class="price prep">整備中</div>' : `<div class="price">${c.price}<small>萬</small></div>`; }
 function render(){
   // 價格由低到高，賣掉的排最後
-  const list = [...CARS].sort((a,b) => (a.sold - b.sold) || (a.price - b.price));
+  const pv = c => (c.price == null ? 1e9 : c.price);
+  const list = [...CARS].sort((a,b) => (a.sold - b.sold) || (pv(a) - pv(b)));
   grid.innerHTML = list.map(c => `
     <article class="card${c.sold ? ' sold' : ''}" data-id="${c.id}">
       <div class="ph"><img src="${photos(c)[0]}" alt="${c.year} ${c.brand} ${c.model}" loading="lazy"><span class="yr">${c.year} 年</span></div>
       <div class="body">
         <div class="name">${c.brand} ${c.model}<small>${c.type}・跑 ${c.km} 公里</small></div>
         <div class="meta">${c.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-        <div class="row"><div class="price">${c.price}<small>萬</small></div><div class="km">看詳情 →</div></div>
+        <div class="row">${priceHtml(c)}<div class="km">看詳情 →</div></div>
       </div>
     </article>`).join('');
 }
@@ -211,10 +215,10 @@ function openCar(id){
   document.getElementById('thumbs').innerHTML = photos(cur).map((p,k) => `<img src="${p}" data-k="${k}" alt="">`).join('');
   const multi = photos(cur).length > 1;
   ['prev','next','thumbs'].forEach(i => document.getElementById(i).style.display = multi ? '' : 'none');
-  const msg = encodeURIComponent(`你好，我想詢問 ${name}（${cur.price} 萬）`);
+  const msg = encodeURIComponent(cur.price == null ? `你好，我想詢問 ${name}` : `你好，我想詢問 ${name}（${cur.price} 萬）`);
   document.getElementById('info').innerHTML = `
     <h2>${cur.brand} ${cur.model}<small>${cur.year} 年・${cur.type}・跑 ${cur.km} 公里</small></h2>
-    <div class="price">${cur.price}<small>萬</small></div>
+    ${priceHtml(cur)}
     <div class="meta">${cur.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
     <ul>${cur.points.map(p => `<li>${p}</li>`).join('')}</ul>
     ${cur.loan ? `<div class="loan">🏦 ${cur.loan}</div>` : ''}
