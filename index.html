@@ -172,7 +172,7 @@ footer strong{color:var(--yellow)}
   </div>
 </div>
 
-<script src="cars.js?v=8"></script>
+<script src="cars.js?v=9"></script>
 <script>
 const PHOTOS = 4; // 每台車的照片數（img/car{id}_1.jpg ~ _4.jpg）
 const grid = document.getElementById('grid');
@@ -187,7 +187,8 @@ const photos = c => {
 function priceHtml(c){ return c.price == null ? '<div class="price prep">整備中</div>' : `<div class="price">${c.price}<small>萬</small></div>`; }
 function render(){
   // 價格由低到高，賣掉的排最後
-  const pv = c => (c.price == null ? 1e9 : c.price);
+  // 整備中（price: null）排最前；last: true 的排在售車最後；其餘價格低到高
+  const pv = c => (c.price == null ? -1 : c.last ? 1e9 : c.price);
   const list = [...CARS].sort((a,b) => (a.sold - b.sold) || (pv(a) - pv(b)));
   grid.innerHTML = list.map(c => `
     <article class="card${c.sold ? ' sold' : ''}" data-id="${c.id}">

@@ -1,7 +1,8 @@
 // ===== 在庫車輛資料 =====
 // 新增一台車：複製一段 { ... }，改內容，照片放 img/ 資料夾
 // 封面：預設第 1 張（車頭向左 45 度），要換就加 cover: 3（用第 3 張）
-// 價格還沒定：price: null（會顯示「整備中」）
+// 價格還沒定：price: null（會顯示「整備中」，排第一台）
+// 要固定排最後：加 last: true
 // 賣掉了：把 sold 改成 true（會顯示「已售出」），或直接刪掉那一段
 const CARS = [
   {
@@ -88,7 +89,7 @@ const CARS = [
     loan: "", sold: false
   },
   {
-    id: 94, photos: ["img/car94_p01.jpg","img/car94_p02.jpg","img/car94_p03.jpg","img/car94_p04.jpg","img/car94_p05.jpg","img/car94_p06.jpg","img/car94_p07.jpg","img/car94_p08.jpg","img/car94_p09.jpg","img/car94_p10.jpg"], brand: "Hyundai", model: "Getz 1.3", year: 2005, km: "12 萬多", price: 5.8, type: "掀背",
+    id: 94, photos: ["img/car94_p01.jpg","img/car94_p02.jpg","img/car94_p03.jpg","img/car94_p04.jpg","img/car94_p05.jpg","img/car94_p06.jpg","img/car94_p07.jpg","img/car94_p08.jpg","img/car94_p09.jpg","img/car94_p10.jpg"], brand: "Hyundai", model: "Getz 1.3", year: 2005, km: "12 萬多", price: 5.8, type: "掀背", last: true,
     tags: ["舊換新系列"],
     points: ["持有稅金便宜", "未來買新車可享有折抵至少 10 萬元補助", "學步車、代步車、買菜車"],
     loan: "", sold: false
