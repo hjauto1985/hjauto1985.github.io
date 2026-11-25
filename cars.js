@@ -6,7 +6,7 @@
 // 賣掉了：把 sold 改成 true（會顯示「已售出」），或直接刪掉那一段
 const CARS = [
   {
-    id: 100, photos: ["img/car100_p01.jpg","img/car100_p02.jpg","img/car100_p03.jpg"],
+    id: 100, photos: ["img/car100_p01.jpg?v=2","img/car100_p02.jpg?v=2","img/car100_p03.jpg?v=2"],
     brand: "Ford", model: "Kuga 2.0T 旗艦版 4WD", year: 2014, km: "13 萬多", price: 18.8, type: "休旅",
     tags: ["全原廠保養", "四輪驅動", "全景天窗"],
     points: ["差速器、ABS 通病已更換", "ACC 主動跟車、車道偏離警示、盲點偵測", "路邊停車輔助", "全景天窗、電動尾門", "後座出風口", "2.0T 渦輪＋四輪驅動"],
