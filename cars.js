@@ -6,6 +6,13 @@
 // 賣掉了：把 sold 改成 true（會顯示「已售出」），或直接刪掉那一段
 const CARS = [
   {
+    id: 101, photos: ["img/car101_p01.jpg","img/car101_p02.jpg","img/car101_p03.jpg"],
+    brand: "Nissan", model: "iTiida 1.6 旗艦版", year: 2017, km: "9.1 萬", price: 26.8, type: "掀背",
+    tags: ["全原廠保養", "旗艦版", "黑色套件"],
+    points: ["iKey 一鍵啟動", "摸門上鎖／解鎖", "定速巡航、恆溫空調", "衛星導航、倒車影像", "黑色套件點綴，質感加分"],
+    loan: "銀行可貸 32.5 萬", sold: false
+  },
+  {
     id: 100, photos: ["img/car100_p01.jpg?v=2","img/car100_p02.jpg?v=2","img/car100_p03.jpg?v=2"],
     brand: "Ford", model: "Kuga 2.0T 旗艦版 4WD", year: 2014, km: "13 萬多", price: 18.8, type: "休旅",
     tags: ["全原廠保養", "四輪驅動", "全景天窗"],
